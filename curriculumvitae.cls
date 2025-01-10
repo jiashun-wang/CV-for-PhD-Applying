@@ -312,9 +312,9 @@
     \vspace{-6mm}
 }
 
-\newcommand{\certificate}[3]{
+\newcommand{\certificate}[4]{
     \resumePOR{}{
-        \textbf{#1:} {{\href{#2}{\linkstyle{#3}}}}}{#3}
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
 }
 
 % End of Class
