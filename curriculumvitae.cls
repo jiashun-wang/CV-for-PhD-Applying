@@ -370,5 +370,27 @@
     \resumeSubItem{#1: }{#2}
 }
 
+% References
+\newcommand{\makereferences}[1]{
+    \section{\keywordstyle{References}}
+    \vspace{-0.2mm}
+    \small{
+        \begin{multicols}{2}
+        \begin{enumerate}[leftmargin=*,labelsep=2mm]
+        #1
+        \end{enumerate}
+        \end{multicols}
+    }
+    \vspace{-4mm}
+}
+
+\newcommand{\reference}[5]{
+    \item \textbf{#1}\\
+        #2\\
+        #3\\
+        Email: #4\\
+        \textit{Relationship: #5}
+}
+
 % End of Class
 \endinput
