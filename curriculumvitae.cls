@@ -259,5 +259,28 @@
         \resumeItemListEnd
 }
 
+% Projects
+\newcommand{\makeprojects}[1]{
+    \section{\keywordstyle{Projects}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\makeproject}[6]{
+    \resumeProject
+        {#1}
+        {Tools: #2}
+        {#3 -- #4}
+        {{}[\href{#5}{\textcolor{accentcolor}{\faGithub}}]}
+        \resumeItemListStart
+            #6
+        \resumeItemListEnd
+}
+
 % End of Class
 \endinput
