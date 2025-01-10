@@ -237,5 +237,27 @@
         \resumeItemListEnd
 }
 
+% Education
+\newcommand{\makeeducation}[1]{
+    \section{\keywordstyle{Education}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\makedegree}[8]{
+    \resumeSubheading
+        {#1}{#2}
+        {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
+        \resumeItemListStart
+            \item \textbf{Classification:} #7
+            \ifx&#8&\else \item \textbf{Relevant Modules:} #8 \fi
+        \resumeItemListEnd
+}
+
 % End of Class
 \endinput
