@@ -206,5 +206,15 @@
     \vspace{-4mm}
 }
 
+% Professional Summary
+\newcommand{\makeprofsum}[1]{
+    \section{\keywordstyle{Professional Summary}}
+    \vspace{1mm}
+    \small{
+        #1
+    }
+    \vspace{-2mm}
+}
+
 % End of Class
 \endinput
