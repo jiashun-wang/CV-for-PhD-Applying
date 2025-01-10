@@ -300,5 +300,22 @@
     \resumeSubItem{#1}{#2}
 }
 
+% Certifications
+\newcommand{\makecertifications}[1]{
+    \section{\keywordstyle{Certifications}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\certificate}[3]{
+    \resumePOR{}{
+        \textbf{#1:} {{\href{#2}{\linkstyle{#3}}}}}{#3}
+}
+
 % End of Class
 \endinput
