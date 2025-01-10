@@ -249,13 +249,14 @@
     \vspace{-6mm}
 }
 
-\newcommand{\makedegree}[8]{
+\newcommand{\makedegree}[9]{
     \resumeSubheading
         {#1}{#2}
         {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
         \resumeItemListStart
             \item \textbf{Classification:} #7
             \ifx&#8&\else \item \textbf{Relevant Modules:} #8 \fi
+            \ifx&#9&\else \item \textbf{Activities \& Societies:} #9 \fi
         \resumeItemListEnd
 }
 
