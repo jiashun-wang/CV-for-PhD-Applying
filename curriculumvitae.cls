@@ -174,6 +174,8 @@
 \newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
 \newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
 
+
+
 % Header
 \newcommand{\makeheader}{
     \headerfontiii
@@ -281,6 +283,21 @@
         \resumeItemListStart
             #6
         \resumeItemListEnd
+}
+
+% Skills
+\newcommand{\makeskills}[1]{
+    \section{\keywordstyle{Skills}}
+    \vspace{-0.4mm}
+    \resumeHeadingSkillStart
+
+    #1
+
+    \resumeHeadingSkillEnd
+}
+
+\newcommand{\makeskillgroup}[2]{
+    \resumeSubItem{#1}{#2}
 }
 
 % End of Class
