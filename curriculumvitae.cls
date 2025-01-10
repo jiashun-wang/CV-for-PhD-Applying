@@ -207,13 +207,34 @@
 }
 
 % Professional Summary
-\newcommand{\makeprofsum}[1]{
+\newcommand{\makesummary}[1]{
     \section{\keywordstyle{Professional Summary}}
     \vspace{1mm}
     \small{
         #1
     }
     \vspace{-2mm}
+}
+
+% Experience
+\newcommand{\makeexperience}[1]{
+    \section{\keywordstyle{Experience}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\makejob}[7]{
+    \resumeSubheading
+        {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
+        {#4}{#5 -- #6}
+        \resumeItemListStart
+            #7
+        \resumeItemListEnd
 }
 
 % End of Class
