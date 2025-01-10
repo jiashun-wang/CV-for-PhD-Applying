@@ -230,7 +230,7 @@
     \vspace{-6mm}
 }
 
-\newcommand{\makejob}[7]{
+\newcommand{\job}[7]{
     \resumeSubheading
         {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
         {#4}{#5 -- #6}
@@ -251,7 +251,7 @@
     \vspace{-6mm}
 }
 
-\newcommand{\makedegree}[9]{
+\newcommand{\degree}[9]{
     \resumeSubheading
         {#1}{#2}
         {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
@@ -274,7 +274,7 @@
     \vspace{-6mm}
 }
 
-\newcommand{\makeproject}[6]{
+\newcommand{\project}[6]{
     \resumeProject
         {#1}
         {Tools: #2}
@@ -296,7 +296,7 @@
     \resumeHeadingSkillEnd
 }
 
-\newcommand{\makeskillgroup}[2]{
+\newcommand{\skillgroup}[2]{
     \resumeSubItem{#1}{#2}
 }
 
