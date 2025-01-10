@@ -297,7 +297,7 @@
 }
 
 \newcommand{\skillgroup}[2]{
-    \resumeSubItem{#1}{#2}
+    \resumeSubItem{#1: }{#2}
 }
 
 % Certifications
@@ -353,6 +353,21 @@
         \resumeItemListStart
             #7
         \resumeItemListEnd
+}
+
+% Additional Information
+\newcommand{\makeadditionalinfo}[1]{
+    \section{\keywordstyle{Additional Information}}
+    \vspace{-0.4mm}
+    \resumeHeadingSkillStart
+
+    #1
+
+    \resumeHeadingSkillEnd
+}
+
+\newcommand{\infogroup}[2]{
+    \resumeSubItem{#1: }{#2}
 }
 
 % End of Class
