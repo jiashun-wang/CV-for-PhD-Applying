@@ -317,5 +317,22 @@
         \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
 }
 
+% Awards
+\newcommand{\makeawards}[1]{
+    \section{\keywordstyle{Awards}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+    
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\award}[4]{
+    \resumePOR{}{
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
+}
+
 % End of Class
 \endinput
