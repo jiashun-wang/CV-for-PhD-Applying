@@ -334,5 +334,26 @@
         \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
 }
 
+% Volunteer Positions
+\newcommand{\makevolunteerpositions}[1]{
+    \section{\keywordstyle{Volunteer Positions}}
+    \vspace{-0.4mm}
+    \resumeSubHeadingListStart
+
+    #1
+
+    \resumeSubHeadingListEnd
+    \vspace{-6mm}
+}
+
+\newcommand{\position}[7]{
+    \resumeSubheading
+        {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
+        {#4}{#5 -- #6}
+        \resumeItemListStart
+            #7
+        \resumeItemListEnd
+}
+
 % End of Class
 \endinput
