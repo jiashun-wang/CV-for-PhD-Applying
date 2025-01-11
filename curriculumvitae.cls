@@ -257,8 +257,8 @@
         {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
         \resumeItemListStart
             \item \textbf{Classification:} #7
-            \ifx&#8&\else \item \textbf{Relevant Modules:} #8 \fi
-            \ifx&#9&\else \item \textbf{Activities \& Societies:} #9 \fi
+            \ifx&#8&\else \item \textbf{Activities \& Societies:} #8 \fi
+            \ifx&#9&\else \item \textbf{Relevant Modules:} #9 \fi
         \resumeItemListEnd
 }
 
