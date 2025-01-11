@@ -234,9 +234,12 @@
     \resumeSubheading
         {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
         {#4}{#5 -- #6}
-        \resumeItemListStart
-            #7
-        \resumeItemListEnd
+        \ifx&#7&
+        \else
+            \resumeItemListStart
+                #7
+            \resumeItemListEnd
+        \fi
 }
 
 % Education
@@ -280,9 +283,12 @@
         {Tools: #2}
         {#3 -- #4}
         {{}[\href{#5}{\textcolor{accentcolor}{\faGithub}}]}
-        \resumeItemListStart
-            #6
-        \resumeItemListEnd
+        \ifx&#6&
+        \else
+            \resumeItemListStart
+                #6
+            \resumeItemListEnd
+        \fi
 }
 
 % Skills
@@ -350,9 +356,12 @@
     \resumeSubheading
         {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
         {#4}{#5 -- #6}
-        \resumeItemListStart
-            #7
-        \resumeItemListEnd
+        \ifx&#7&
+        \else
+            \resumeItemListStart
+                #7
+            \resumeItemListEnd
+        \fi
 }
 
 % Additional Information
