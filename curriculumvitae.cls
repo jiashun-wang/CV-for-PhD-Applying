@@ -280,7 +280,7 @@
 \newcommand{\project}[6]{
     \resumeProject
         {#1}
-        {Tools: #2}
+        {\ifx&#2&\vspace{-0.35cm}\else Tools: #2\fi}
         {#3 -- #4}
         {{}[\href{#5}{\textcolor{accentcolor}{\faGithub}}]}
         \ifx&#6&
