@@ -294,7 +294,7 @@
 % Skills
 \newcommand{\makeskills}[1]{
     \section{\keywordstyle{Skills}}
-    \vspace{-0.4mm}
+    \vspace{0.4mm}
     \resumeHeadingSkillStart
 
     #1
