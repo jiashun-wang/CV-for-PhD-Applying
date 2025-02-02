@@ -308,7 +308,7 @@
 
 % Certifications
 \newcommand{\makecertifications}[1]{
-    \section{\keywordstyle{Certifications}}
+    \section{\keywordstyle{Courses \& Certifications}}
     \vspace{-0.4mm}
     \resumeSubHeadingListStart
 
@@ -316,6 +316,11 @@
 
     \resumeSubHeadingListEnd
     \vspace{-6mm}
+}
+
+\newcommand{\course}[4]{
+    \resumePOR{}{
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
 }
 
 \newcommand{\certificate}[4]{
