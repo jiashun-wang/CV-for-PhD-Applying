@@ -162,6 +162,10 @@
 \newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
 \newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
 
+\newcommand{\socialiconlink}[3]{%
+    \href{#2}{\textcolor{accentcolor} {\faIcon{#1}\makebox[0pt]{\phantom{#3: #2}}}}%
+}
+
 % Font options
 \newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
 \newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
@@ -246,7 +250,7 @@
 
 \newcommand{\job}[7]{
     \resumeSubheading
-        {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
+        {{#1 [\socialiconlink{globe}{#2}{Company Website}]}}{#3}
         {#4}{#5 -- #6}
         \ifx&#7&
         \else
@@ -296,7 +300,7 @@
         {#1}
         {\ifx&#2&\vspace{-0.35cm}\else Tools: #2\fi}
         {#3 -- #4}
-        {{}[\href{#5}{\textcolor{accentcolor}{\faGithub}}]}
+        {{}[\socialiconlink{github}{#5}{GitHub Repository}]}
         \ifx&#6&
         \else
             \resumeItemListStart
@@ -373,7 +377,7 @@
 
 \newcommand{\position}[7]{
     \resumeSubheading
-        {{#1 [\href{#2}{\textcolor{accentcolor}{\faIcon{globe}}}]}}{#3}
+        {{#1 [\socialiconlink{globe}{#2}{Organisation Website}]}}{#3}
         {#4}{#5 -- #6}
         \ifx&#7&
         \else
