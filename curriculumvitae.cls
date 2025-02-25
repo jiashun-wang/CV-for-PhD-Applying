@@ -202,7 +202,21 @@
     \vspace{-6mm}
 
     \begin{center}
-        \small{\@city, \@county, \@country}
+        \small{
+        \ifx\@city\empty
+            \ifx\@county\empty
+                \@country
+            \else
+                \@county, \@country
+            \fi
+        \else
+            \ifx\@county\empty
+                \@city, \@country
+            \else
+                \@city, \@county, \@country
+            \fi
+        \fi
+        }
     \end{center}
 
     \vspace{-4mm}
