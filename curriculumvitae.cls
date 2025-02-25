@@ -275,12 +275,15 @@
 \newcommand{\degree}[9]{
     \resumeSubheading
         {#1}{#2}
-        {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
-        \resumeItemListStart
-            \item \textbf{Classification:} #7
-            \ifx&#8&\else \item \textbf{Activities \& Societies:} #8 \fi
-            \ifx&#9&\else \item \textbf{Relevant Modules:} #9 \fi
-        \resumeItemListEnd
+        {#3: #7}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
+        \ifx&#8&\ifx&#9&
+            \vspace{0.4mm}
+        \else
+            \resumeItemListStart
+                \ifx&#8&\else \item \textbf{Activities \& Societies:} #8 \fi
+                \ifx&#9&\else \item \textbf{Relevant Modules:} #9 \fi
+            \resumeItemListEnd
+        \fi
 }
 
 % Projects
