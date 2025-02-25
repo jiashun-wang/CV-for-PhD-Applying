@@ -48,7 +48,7 @@
 
 % Colour Definitions
 \definecolor{accentcolor}{RGB}{106, 13, 173}
-\definecolor{linkcolor}{RGB}{36, 0, 103}
+\definecolor{linkcolor}{RGB}{0, 0, 0}
 
 % Page layout
 \setlength{\multicolsep}{0pt} 
@@ -100,7 +100,7 @@
 % Custom commands
 
 \newcommand{\keywordstyle}[1]{\textbf{\textcolor{accentcolor}{#1}}}
-\newcommand{\linkstyle}[1]{\textcolor{linkcolor}{\underline{#1}}}
+\newcommand{\linkstyle}[1]{\textcolor{linkcolor}{#1}}
 
 \newcommand{\resumeItem}[2]{
   \item{
