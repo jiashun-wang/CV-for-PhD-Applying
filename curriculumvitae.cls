@@ -178,7 +178,7 @@
 
 % Header
 \newcommand{\makeheader}{
-    \headerfontiii
+    \headerfontx
 
     \begin{center}
         {\Huge{\keywordstyle{\@name}}}
