@@ -272,18 +272,23 @@
     \vspace{-6mm}
 }
 
-\newcommand{\degree}[9]{
+\newcommand{\longdegree}[9]{
     \resumeSubheading
         {#1}{#2}
-        {#3: #7}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
-        \ifx&#8&\ifx&#9&
-            \vspace{0.4mm}
-        \else
-            \resumeItemListStart
-                \ifx&#8&\else \item \textbf{Activities \& Societies:} #8 \fi
-                \ifx&#9&\else \item \textbf{Relevant Modules:} #9 \fi
-            \resumeItemListEnd
-        \fi
+        {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
+        \resumeItemListStart
+            \item \textbf{Grade:} #7
+            \ifx&#8&\else \item \textbf{Activities \& Societies:} #8 \fi
+            \ifx&#9&\else \item \textbf{Relevant Modules:} #9 \fi
+        \resumeItemListEnd
+}
+
+\newcommand{\shortdegree}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} -- #2: #3 & \textit{\footnotesize{#4}}
+    \end{tabular*}
+    \vspace{-2.4mm}
 }
 
 % Projects
@@ -341,12 +346,12 @@
 
 \newcommand{\course}[4]{
     \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
 }
 
 \newcommand{\certificate}[4]{
     \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
 }
 
 % Awards
@@ -363,7 +368,7 @@
 
 \newcommand{\award}[4]{
     \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{#4}
+        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
 }
 
 % Volunteer Positions
