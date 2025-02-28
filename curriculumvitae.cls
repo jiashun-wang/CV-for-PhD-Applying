@@ -332,6 +332,7 @@
                 #6
             \resumeItemListEnd
         \fi
+    \vspace{1mm}
 }
 
 % Skills
