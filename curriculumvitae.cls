@@ -103,8 +103,8 @@
 \newcommand{\linkstyle}[1]{\textcolor{linkcolor}{#1}}
 
 \newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  {
+    \textbf{#1}{\hspace{0.5mm}#2\vspace{0.5mm}}\\
   }
 }
 
@@ -133,7 +133,7 @@
     \vspace{-2.4mm}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
 
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
@@ -337,11 +337,10 @@
 \newcommand{\makeskills}[1]{
     \section{\keywordstyle{Skills}}
     \vspace{0.4mm}
-    \resumeHeadingSkillStart
 
     #1
 
-    \resumeHeadingSkillEnd
+    \vspace{-2mm}
 }
 
 \newcommand{\skillgroup}[2]{
