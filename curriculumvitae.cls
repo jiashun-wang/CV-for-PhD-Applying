@@ -402,7 +402,7 @@
     \vspace{-6mm}
 }
 
-\newcommand{\position}[7]{
+\newcommand{\longposition}[7]{
     \resumeSubheading
         {{#1 [\socialiconlink{globe}{#2}{Organisation Website}]}}{#3}
         {#4}{#5 -- #6}
@@ -412,6 +412,14 @@
                 #7
             \resumeItemListEnd
         \fi
+}
+
+\newcommand{\shortposition}[5]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1 [\socialiconlink{globe}{#2}{Organisation Website}]} -- #3 & \textit{\footnotesize{#4 -- #5}}
+    \end{tabular*}
+    \vspace{-2.4mm}
 }
 
 % Additional Information
