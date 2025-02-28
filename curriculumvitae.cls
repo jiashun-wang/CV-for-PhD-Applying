@@ -109,15 +109,14 @@
 }
 
 \newcommand{\resumePOR}[3]{
-\vspace{0.5mm}\item
+\vspace{0.5mm}
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+        \textbf{#1}\hspace{0.5mm}#2 & \textit{\small{#3}} 
     \end{tabular*}
-    \vspace{-2mm}
 }
 
 \newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
+\vspace{0.5mm}
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{#1} & \textit{\footnotesize{#4}} \\
         \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
@@ -126,7 +125,7 @@
 }
 
 \newcommand{\resumeProject}[4]{
-\vspace{0.5mm}\item
+\vspace{0.5mm}
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{#1} & \textit{\footnotesize{#3}} \\
         \footnotesize{\textit{#2}} & \footnotesize{#4}
@@ -259,12 +258,12 @@
 \newcommand{\makeexperience}[1]{
     \section{\keywordstyle{Experience}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
+
 
     #1
 
-    \resumeSubHeadingListEnd
-    \vspace{-6mm}
+
+    \vspace{-2mm}
 }
 
 \newcommand{\job}[7]{
@@ -277,18 +276,17 @@
                 #7
             \resumeItemListEnd
         \fi
+    \vspace{1mm}
 }
 
 % Education
 \newcommand{\makeeducation}[1]{
     \section{\keywordstyle{Education}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
 
     #1
 
-    \resumeSubHeadingListEnd
-    \vspace{-6mm}
+    \vspace{-2mm}
 }
 
 \newcommand{\longdegree}[9]{
@@ -303,23 +301,22 @@
 }
 
 \newcommand{\shortdegree}[4]{
-\vspace{0.5mm}\item
+\vspace{0.5mm}
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{#1} -- #2: #3 & \textit{\footnotesize{#4}}
     \end{tabular*}
-    \vspace{-2.4mm}
 }
 
 % Projects
 \newcommand{\makeprojects}[1]{
     \section{\keywordstyle{Projects}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
+
 
     #1
 
-    \resumeSubHeadingListEnd
-    \vspace{-6mm}
+
+    \vspace{-2mm}
 }
 
 \newcommand{\project}[6]{
@@ -355,50 +352,56 @@
 \newcommand{\makecertifications}[1]{
     \section{\keywordstyle{Courses \& Certifications}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
+
 
     #1
 
-    \resumeSubHeadingListEnd
-    \vspace{-6mm}
+
+    \vspace{-2mm}
 }
 
-\newcommand{\course}[4]{
-    \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
+\newcommand{\course}[5]{
+    \vspace{0.5mm}
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} -- {{\href{#3}{\linkstyle{#2}}}} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}
+    \end{tabular*}
 }
 
-\newcommand{\certificate}[4]{
-    \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
+\newcommand{\certificate}[5]{
+    \vspace{0.5mm}
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} -- {{\href{#3}{\linkstyle{#2}}}} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}
+    \end{tabular*}
 }
 
 % Awards
 \newcommand{\makeawards}[1]{
     \section{\keywordstyle{Awards}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
+
     
     #1
 
-    \resumeSubHeadingListEnd
+
     \vspace{-6mm}
 }
 
-\newcommand{\award}[4]{
-    \resumePOR{}{
-        \textbf{#1:} {{\href{#3}{\linkstyle{#2}}}}}{\footnotesize{#4}}
+\newcommand{\award}[5]{
+    \vspace{0.5mm}
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} -- {{\href{#3}{\linkstyle{#2}}}} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}
+    \end{tabular*}
 }
 
 % Volunteer Positions
 \newcommand{\makevolunteerpositions}[1]{
     \section{\keywordstyle{Volunteer Positions}}
     \vspace{-0.4mm}
-    \resumeSubHeadingListStart
+
 
     #1
 
-    \resumeSubHeadingListEnd
+
     \vspace{-6mm}
 }
 
