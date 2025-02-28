@@ -322,10 +322,10 @@
 
 \newcommand{\project}[6]{
     \resumeProject
-        {#1}
+        {{#1 \ifx&#2&[\socialiconlink{github}{#5}{GitHub Repository}] \fi}}
         {\ifx&#2&\vspace{-0.35cm}\else Tools: #2\fi}
         {#3 -- #4}
-        {{}[\socialiconlink{github}{#5}{GitHub Repository}]}
+        {\ifx&#2&\else {}[\socialiconlink{github}{#5}{GitHub Repository}] \fi}
         \ifx&#6&
         \else
             \resumeItemListStart
