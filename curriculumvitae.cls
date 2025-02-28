@@ -189,41 +189,60 @@
     \end{center}
     \vspace{-6mm}
 
+    % Contact details (conditionally include each if defined)
     \begin{center}
         \small{
-        \@phone | \href{mailto:\@email}{\linkstyle{\@email}} | \href{https://www.\@website}{\linkstyle{\@website}}
-        }
-    \end{center}
-    \vspace{-6mm}
-
-    \begin{center}
-        \small{
-        \socialicon{\textcolor{accentcolor}{\faLinkedin}} \href{https://www.\@linkedin}{\linkstyle{\@linkedin}} | 
-        \socialicon{\textcolor{accentcolor}{\faGithub}} \href{https://www.\@github}{\linkstyle{\@github}} |
-        \socialicon{\textcolor{accentcolor}{\faCode}} \href{https://www.\@leetcode}{\linkstyle{\@leetcode}}
-        }
-    \end{center}
-    \vspace{-6mm}
-
-    \begin{center}
-        \small{
-        \ifx\@city\empty
-            \ifx\@county\empty
-                \@country
-            \else
-                \@county, \@country
-            \fi
-        \else
-            \ifx\@county\empty
-                \@city, \@country
-            \else
-                \@city, \@county, \@country
-            \fi
+        \ifx\@phone\empty\else \@phone \fi
+        \ifx\@phone\empty\else \ifx\@email\empty\else \enspace | \fi \fi
+        \ifx\@email\empty\else \href{mailto:\@email}{\linkstyle{\@email}} \fi
+        \ifx\@website\empty\else 
+            \ifx\@phone\empty \ifx\@email\empty \else | \fi \else | \fi
+            \href{https://www.\@website}{\linkstyle{\@website}} 
         \fi
         }
     \end{center}
+    \vspace{-6mm}
 
-    \vspace{-4mm}
+    % Social links (conditionally include each if defined)
+    \begin{center}
+        \small{
+        \ifx\@linkedin\empty\else
+            \socialicon{\textcolor{accentcolor}{\faLinkedin}} \href{https://www.\@linkedin}{\linkstyle{\@linkedin}}
+        \fi
+        \ifx\@linkedin\empty\else \ifx\@github\empty\else \enspace | \fi \fi
+        \ifx\@github\empty\else
+            \socialicon{\textcolor{accentcolor}{\faGithub}} \href{https://www.\@github}{\linkstyle{\@github}}
+        \fi
+        \ifx\@github\empty\else \ifx\@leetcode\empty\else \enspace | \fi \fi
+        \ifx\@leetcode\empty\else
+            \socialicon{\textcolor{accentcolor}{\faCode}} \href{https://www.\@leetcode}{\linkstyle{\@leetcode}}
+        \fi
+        }
+    \end{center}
+    \vspace{-6mm}
+
+    % Only include location if at least one field is present
+    \ifx\@city\empty \ifx\@county\empty \ifx\@country\empty
+    \else
+        \begin{center}
+            \small{
+            \ifx\@city\empty
+                \ifx\@county\empty
+                    \@country
+                \else
+                    \@county, \@country
+                \fi
+            \else
+                \ifx\@county\empty
+                    \@city, \@country
+                \else
+                    \@city, \@county, \@country
+                \fi
+            \fi
+            }
+        \end{center}
+        \vspace{-4mm}
+    \fi \fi \fi
 }
 
 % Professional Summary
