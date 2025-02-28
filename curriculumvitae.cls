@@ -326,6 +326,7 @@
         {\ifx&#2&\vspace{-0.35cm}\else Tools: #2\fi}
         {#3 -- #4}
         {\ifx&#2&\else {}[\socialiconlink{github}{#5}{GitHub Repository}] \fi}
+        \vspace{0.5mm}
         \ifx&#6&
         \else
             \resumeItemListStart
