@@ -270,6 +270,7 @@
     \resumeSubheading
         {{#1 [\socialiconlink{globe}{#2}{Company Website}]}}{#3}
         {#4}{#5 -- #6}
+        \vspace{1mm}
         \ifx&#7&
         \else
             \resumeItemListStart
