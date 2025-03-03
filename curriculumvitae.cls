@@ -322,10 +322,10 @@
 
 \newcommand{\project}[6]{
     \resumeProject
-        {{#1 \ifx&#2&[\socialiconlink{github}{#5}{GitHub Repository}] \fi}}
+        {{#1 \ifx&#2&\ifx&#5&\else[\socialiconlink{github}{#5}{GitHub Repository}] \fi\fi}}
         {\ifx&#2&\vspace{-0.35cm}\else Tools: #2\fi}
         {#3 -- #4}
-        {\ifx&#2&\else {}[\socialiconlink{github}{#5}{GitHub Repository}] \fi}
+        {\ifx&#2&\else\ifx&#5& {}[\socialiconlink{github}{#5}{GitHub Repository}] \fi\fi}
         \vspace{0.5mm}
         \ifx&#6&
         \else
