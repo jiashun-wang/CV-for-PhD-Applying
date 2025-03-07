@@ -47,7 +47,7 @@
 \newcommand{\country}[1]{\xdef\@country{#1}}
 
 % Colour Definitions
-\definecolor{accentcolor}{RGB}{106, 13, 173}
+\definecolor{accentcolor}{RGB}{72, 0, 128}
 \definecolor{linkcolor}{RGB}{0, 0, 0}
 
 % Page layout
