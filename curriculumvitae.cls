@@ -388,12 +388,13 @@
     \vspace{-6mm}
 }
 
-\newcommand{\award}[5]{
+\newcommand{\award}[4]{  % 将参数从5个改为4个，去掉链接参数
     \vspace{0.5mm}
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} -- {{\href{#3}{\linkstyle{#2}}}} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}
+        \textbf{#1} -- {\linkstyle{#2}} & \textit{\footnotesize{\ifx&#4&\else #3 -- #4\fi}}
     \end{tabular*}
 }
+
 
 % Volunteer Positions
 \newcommand{\makevolunteerpositions}[1]{
