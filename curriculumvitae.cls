@@ -19,23 +19,11 @@
 \lxdef \@name         {Name Surname}
 \newcommand{\name}[1]{\xdef\@name{#1}}
 
-\lxdef \@phone        {+44 1234 567890}
+\lxdef \@phone        {+86 173-2577-2985}
 \newcommand{\phone}[1]{\xdef\@phone{#1}}
 
-\lxdef \@email        {example@email.com}
+\lxdef \@email        {wjs@ieee.org}
 \newcommand{\email}[1]{\xdef\@email{#1}}
-
-\lxdef \@website      {example.com}
-\newcommand{\website}[1]{\xdef\@website{#1}}
-
-\lxdef \@linkedin     {linkedin.com/in/example}
-\newcommand{\linkedin}[1]{\xdef\@linkedin{#1}}
-
-\lxdef \@github       {github.com/example}
-\newcommand{\github}[1]{\xdef\@github{#1}}
-
-\lxdef \@leetcode     {leetcode.com/example}
-\newcommand{\leetcode}[1]{\xdef\@leetcode{#1}}
 
 \lxdef \@city         {City}
 \newcommand{\city}[1]{\xdef\@city{#1}}
@@ -45,6 +33,18 @@
 
 \lxdef \@country      {Country}
 \newcommand{\country}[1]{\xdef\@country{#1}}
+
+\lxdef \@website      {https://jia-shun.wang}
+\newcommand{\website}[1]{\xdef\@website{#1}}
+
+\lxdef \@linkedin     {linkedin.com/in/wangjiashun}
+\newcommand{\linkedin}[1]{\xdef\@linkedin{#1}}
+
+\lxdef \@github       {github.com/jiashun-wang}
+\newcommand{\github}[1]{\xdef\@github{#1}}
+
+
+
 
 % Colour Definitions
 \definecolor{accentcolor}{RGB}{3, 78, 164}
@@ -204,20 +204,17 @@
 
     % Social links (conditionally include each if defined)
     \begin{center}
-        \small{
-        \ifx\@linkedin\empty\else
-            \socialicon{\textcolor{accentcolor}{\faLinkedin}} \href{https://www.\@linkedin}{\linkstyle{\@linkedin}}
-        \fi
-        \ifx\@linkedin\empty\else \ifx\@github\empty\else \enspace | \fi \fi
-        \ifx\@github\empty\else
-            \socialicon{\textcolor{accentcolor}{\faGithub}} \href{https://www.\@github}{\linkstyle{\@github}}
-        \fi
-        \ifx\@github\empty\else \ifx\@leetcode\empty\else \enspace | \fi \fi
-        \ifx\@leetcode\empty\else
-            \socialicon{\textcolor{accentcolor}{\faCode}} \href{https://www.\@leetcode}{\linkstyle{\@leetcode}}
-        \fi
-        }
+    \small{
+    \ifx\@linkedin\empty\else
+        \socialicon{\textcolor{accentcolor}{\faLinkedin}} \href{https://www.\@linkedin}{\linkstyle{\@linkedin}}
+    \fi
+    \ifx\@linkedin\empty\else \ifx\@github\empty\else \enspace | \fi \fi
+    \ifx\@github\empty\else
+        \socialicon{\textcolor{accentcolor}{\faGithub}} \href{https://www.\@github}{\linkstyle{\@github}}
+    \fi
+    }
     \end{center}
+
     \vspace{-6mm}
 
     % Only include location if at least one field is present
