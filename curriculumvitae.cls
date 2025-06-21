@@ -179,7 +179,6 @@
 
 
 
-% Header
 \newcommand{\makeheader}{
     \headerfontx
 
@@ -188,58 +187,79 @@
     \end{center}
     \vspace{-6mm}
 
-    % Contact details (conditionally include each if defined)
+    % 手机号、邮箱、地理位置 同行
     \begin{center}
-        \small{
-        \ifx\@phone\empty\else \@phone \fi
-        \ifx\@phone\empty\else \ifx\@email\empty\else \enspace | \fi \fi
-        \ifx\@email\empty\else \href{mailto:\@email}{\linkstyle{\@email}} \fi
-        \ifx\@website\empty\else 
-            \ifx\@phone\empty \ifx\@email\empty \else | \fi \else | \fi
-            \href{https://www.\@website}{\linkstyle{\@website}} 
-        \fi
+        \small{%
+            % 手机号
+            \ifx\@phone\empty\else \@phone\fi%
+            % 手机号与邮箱间分隔符
+            \ifx\@phone\empty\else%
+                \ifx\@email\empty\else\enspace | \enspace\fi%
+            \fi%
+            % 邮箱
+            \ifx\@email\empty\else\href{mailto:\@email}{\linkstyle{\@email}}\fi%
+            % 邮箱与地理位置间分隔符
+            \ifx\@email\empty%
+            \else%
+                \ifx\@city\empty%
+                    \ifx\@county\empty%
+                        \ifx\@country\empty%
+                        \else\enspace | \enspace\fi%
+                    \else\enspace | \enspace\fi%
+                \else\enspace | \enspace\fi%
+            \fi%
+            % 地理位置（城市、县、国家）
+            \ifx\@city\empty%
+                \ifx\@county\empty%
+                    \ifx\@country\empty%
+                    \else \@country\fi%
+                \else \@county%
+                    \ifx\@country\empty%
+                    \else, \@country\fi%
+                \fi%
+            \else \@city%
+                \ifx\@county\empty%
+                \else, \@county\fi%
+                \ifx\@country\empty%
+                \else, \@country\fi%
+            \fi%
         }
     \end{center}
     \vspace{-6mm}
 
-    % Social links (conditionally include each if defined)
-    \begin{center}
-    \small{
-    \ifx\@linkedin\empty\else
-        \socialicon{\textcolor{accentcolor}{\faLinkedin}} \href{https://www.\@linkedin}{\linkstyle{\@linkedin}}
-    \fi
-    \ifx\@linkedin\empty\else \ifx\@github\empty\else \enspace | \fi \fi
-    \ifx\@github\empty\else
-        \socialicon{\textcolor{accentcolor}{\faGithub}} \href{https://www.\@github}{\linkstyle{\@github}}
-    \fi
+    % 个人网站 和 LinkedIn, GitHub 同行
+% 个人网站 和 LinkedIn, GitHub 同行
+\begin{center}
+    \small{%
+        % 个人网站（带地球logo）
+        \ifx\@website\empty\else
+            \socialicon{\textcolor{accentcolor}{\faGlobe}}~\href{https://www.\@website}{\linkstyle{\@website}}%
+        \fi%
+        % 网站与LinkedIn间分隔符
+        \ifx\@website\empty%
+        \else%
+            \ifx\@linkedin\empty%
+            \else \enspace | \enspace\fi%
+        \fi%
+        % LinkedIn
+        \ifx\@linkedin\empty\else
+            \socialicon{\textcolor{accentcolor}{\faLinkedin}}~\href{https://www.\@linkedin}{\linkstyle{\@linkedin}}%
+        \fi%
+        % LinkedIn与GitHub间分隔符
+        \ifx\@linkedin\empty%
+        \else%
+            \ifx\@github\empty%
+            \else \enspace | \enspace\fi%
+        \fi%
+        % GitHub
+        \ifx\@github\empty\else
+            \socialicon{\textcolor{accentcolor}{\faGithub}}~\href{https://www.\@github}{\linkstyle{\@github}}%
+        \fi%
     }
-    \end{center}
+\end{center}
 
-    \vspace{-6mm}
-
-    % Only include location if at least one field is present
-    \ifx\@city\empty \ifx\@county\empty \ifx\@country\empty
-    \else
-        \begin{center}
-            \small{
-            \ifx\@city\empty
-                \ifx\@county\empty
-                    \@country
-                \else
-                    \@county, \@country
-                \fi
-            \else
-                \ifx\@county\empty
-                    \@city, \@country
-                \else
-                    \@city, \@county, \@country
-                \fi
-            \fi
-            }
-        \end{center}
-        \vspace{-4mm}
-    \fi \fi \fi
 }
+
 
 % Professional Summary
 \newcommand{\makesummary}[1]{
@@ -265,7 +285,7 @@
 
 \newcommand{\job}[7]{
     \resumeSubheading
-        {{#1 [\socialiconlink{globe}{#2}{Company Website}]}}{#3}
+        {{#1 \ifx&#2&\else [\socialiconlink{globe}{#2}{Company Website}]\fi}}{#3}
         {#4}{#5 -- #6}
         \vspace{1mm}
         \ifx&#7&
@@ -277,6 +297,7 @@
     \vspace{1mm}
 }
 
+
 % Education
 \newcommand{\makeeducation}[1]{
     \section{\keywordstyle{Education}}
@@ -287,16 +308,21 @@
     \vspace{-2mm}
 }
 
-\newcommand{\longdegree}[9]{
+\newcommand{\longdegree}[9]{%
     \resumeSubheading
         {#1}{#2}
-        {#3}{#4 -- #5 \ifx&#6&\else (Grad. #6) \fi}
-        \resumeItemListStart
-            \item \textbf{Grade:} #7
-            \ifx&#8&\else \item \textbf{Thesis:} #8 \fi
-            \ifx&#9&\else \item \textbf{Supervisor:} #9 \fi
-        \resumeItemListEnd
+        {\makebox[0pt][l]{#3}}%
+        {#4 -- #5 \ifx&#6&\else \quad (Grad. #6) \fi}%
+    \resumeItemListStart
+        \item \textbf{Grade:} #7
+        \ifx&#8&\else \item \textbf{Thesis:} #8 \fi
+        \ifx&#9&\else \item \textbf{Supervisor:} #9 \fi
+    \resumeItemListEnd
+    \vspace{1mm} % 在 longdegree 块后添加间距
 }
+
+
+
 
 \newcommand{\shortdegree}[4]{
 \vspace{0.5mm}
@@ -366,23 +392,20 @@
     \end{tabular*}
 }
 
-\newcommand{\certificate}[5]{
+\newcommand{\certificate}[5]{%
     \vspace{0.5mm}
     \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} -- {{\href{#3}{\linkstyle{#2}}}} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}
+        {\href{#2}{\textbf{#1}}} -- \linkstyle{#3} & \textit{\footnotesize{\ifx&#5&#4\else #4 -- #5\fi}}%
     \end{tabular*}
 }
+
 
 % Awards
 \newcommand{\makeawards}[1]{
     \section{\keywordstyle{Awards}}
     \vspace{-0.4mm}
-
-    
     #1
-
-
-    \vspace{-6mm}
+    \vspace{-2mm}
 }
 
 \newcommand{\award}[4]{  % 将参数从5个改为4个，去掉链接参数
@@ -393,36 +416,31 @@
 }
 
 
-% Volunteer Positions
-\newcommand{\makevolunteerpositions}[1]{
-    \section{\keywordstyle{Volunteer Positions}}
+% Part-time position
+
+\newcommand{\makepositions}[1]{
+    \section{\keywordstyle{Part-time Positions}}
     \vspace{-0.4mm}
 
 
     #1
 
 
-    \vspace{-6mm}
+    \vspace{-2mm}
 }
 
-\newcommand{\longposition}[7]{
+\newcommand{\position}[7]{
     \resumeSubheading
-        {{#1 [\socialiconlink{globe}{#2}{Organisation Website}]}}{#3}
+        {{#1 \ifx&#2&\else [\socialiconlink{globe}{#2}{Company Website}]\fi}}{#3}
         {#4}{#5 -- #6}
+        \vspace{1mm}
         \ifx&#7&
         \else
             \resumeItemListStart
                 #7
             \resumeItemListEnd
         \fi
-}
-
-\newcommand{\shortposition}[5]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1 [\socialiconlink{globe}{#2}{Organisation Website}]} -- #3 & \textit{\footnotesize{#4 -- #5}}
-    \end{tabular*}
-    \vspace{-2.4mm}
+    \vspace{1mm}
 }
 
 % Additional Information
@@ -451,7 +469,7 @@
         \end{enumerate}
         \end{multicols}
     }
-    \vspace{-4mm}
+    \vspace{-2mm}
 }
 
 \newcommand{\reference}[5]{
